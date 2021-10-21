@@ -1,5 +1,3 @@
-zzzzz
-
 # Getting Started
 
 ### Reference Documentation
