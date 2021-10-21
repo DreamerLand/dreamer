@@ -1,0 +1,53 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+import com.zxw.dreamer.common.vo.Result;
+
+import javax.annotation.Resource;
+
+/**
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+    @Resource
+    private ${table.mapperName} mapper;
+
+    @Override
+    public Result getList(HashMap<String,Object>() map){
+        return new Result.ok();
+    }
+
+    @Override
+    public Result detail(){
+        return new Result.ok();
+    }
+
+    @Override
+    public Result save(){
+        return new Result.ok();
+    }
+
+    @Override
+    public Result update(){
+        return new Result.ok();
+    }
+
+    @Override
+    public Result deleteByIds(){
+        return new Result.ok();
+    }
+
+    @Override
+    public Result importExcel(){
+        return new Result.ok();
+    }
+
+}
+

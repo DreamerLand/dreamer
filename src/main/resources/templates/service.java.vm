@@ -1,0 +1,56 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+import com.zxw.dreamer.common.vo.Result;
+
+/**
+ * @author ${author}
+ * @since ${date}
+ */
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+    /**
+    * 查询列表
+    * @param map 条件
+    * @return result
+    */
+    Result getList(HashMap<String,Object>() map);
+    /**
+    * 查询详情
+    * @param id 主键
+    * @return result
+    */
+    Result detail(Long id);
+    /**
+    * 保存
+    * @param dto dto
+    * @return result
+    */
+    Result save(${dto} dto);
+    /**
+    * 修改
+    * @param dto dto
+    * @return result
+    */
+    Result update(${dto} dto);
+    /**
+    * 根据主键删除
+    * @param ids 逗号拼接的id
+    * @return result
+    */
+    Result deleteByIds(String ids);
+    /**
+    * 导入
+    * @param file excel文件
+    * @return result
+    */
+    Result importExcel(MultipartFile file);
+    /**
+    * 导入
+    * @param map 查询条件
+    * @param response 响应
+    */
+    export(HashMap<String, Object> map, HttpServletResponse response);
+}
+

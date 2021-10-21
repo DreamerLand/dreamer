@@ -1,0 +1,55 @@
+package ${package.Controller};
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import com.zxw.dreamer.common.vo.Result;
+
+/**
+ * @author ${author}
+ * @since ${date}
+ */
+@RestController
+@RequestMapping("${package.ModuleName}")
+public class ${table.controllerName} {
+
+    @Autowired
+    private ${table.serviceName} service;
+
+    @GetMapping("getList")
+    public Result getList(@RequestParam HashMap<String,Object>() map){
+        return service.getList(map);
+    }
+
+    @GetMapping("detail/{id}")
+    public Result detail(@PathVariable("id") Long id){
+            return service.detail(id);
+    }
+
+    @PostMapping
+    public Result save(@RequestBody ${dto} dto){
+        return service.save(dto);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody ${dto} dto){
+        return service.update(dto);
+    }
+
+    @DeleteMapping
+    public Result deleteByIds(@RequestBody String ids){
+        return service.deleteByIds(ids);
+    }
+
+    @PostMapping("importExcel")
+    public Result importExcel(@RequestParam("file") MultipartFile file){
+        return service.importExcel(file);
+    }
+
+    @GetMapping("export")
+    public void export(@RequestParam HashMap<String, Object> map, HttpServletResponse response){
+        service.export(map,response);
+    }
+}
